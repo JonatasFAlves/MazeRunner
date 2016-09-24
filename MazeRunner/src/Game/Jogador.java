@@ -5,22 +5,27 @@ import javax.swing.*;
 
 public class Jogador {
     
+    //Variáveis para localização do jogador e armazenamento do ícone do jogador.
     private int tileX, tileY;
     private Image imgJogador;
     
     public Jogador(){
-        ImageIcon img = new ImageIcon("C:\\Users\\Elizabeth\\Documents\\NetBeansProjects\\MazeRunner\\src\\Game\\jogador.png");
+        //Recebe o ícone do jogador
+        ImageIcon img = new ImageIcon("icons\\jogador.png");
         imgJogador = img.getImage();
         
+        //Inicia o jogador na posição (1,1)
         tileX = 1;
         tileY = 1;
     }
     
+    //Função para movimento do jogador, adiciona o X e Y ao local do jogador
     public void move(int tileX, int tileY ){
         this.tileX += tileX;
         this.tileY += tileY;
     }
- 
+    
+    //Gets 
     public Image getJogador(){
         return imgJogador;
     }

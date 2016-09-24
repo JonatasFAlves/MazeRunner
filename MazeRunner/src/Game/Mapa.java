@@ -6,35 +6,40 @@ import java.util.*;
 import javax.swing.*;
 
 public class Mapa {
-    
+    //Variável para scanear imagens
     private Scanner scan;
+    //VAriável para pintar o mapa
     private String Mapa[] = new String [14];
+    //Variáveis para armazenamento dos ícones
     private Image caminho,
                   parede,
                   chegada;
     
     public Mapa(){
-        ImageIcon img = new ImageIcon( "src\\Game\\caminho.png" );
+        //Recebe imagem da parede, caminho e da chegada e coloca em suas respectivas variáveis
+        ImageIcon img = new ImageIcon( "icons\\caminho.png" );
         caminho = img.getImage();
-        img = new ImageIcon( "src\\Game\\parede.png" );
+        img = new ImageIcon( "icons\\parede.png" );
         parede = img.getImage();
-        img = new ImageIcon ( "src\\Game\\peach.png" );
+        img = new ImageIcon ( "icons\\peach.png" );
         chegada = img.getImage();
         
+        //Funções para ler os mapas
         openFile();
         readFile();
         closeFile();
     }
     
-    public void openFile(){
-        
+    //Procura o arquivo .txt do mapa
+    public void openFile(){  
         try{
-        scan = new Scanner(new File("src\\Game\\mapa1.txt"));
+        scan = new Scanner(new File("mapas\\mapa1.txt"));
         } catch (Exception e){
             JOptionPane.showMessageDialog(null, "Mapa não encontrado!");
         }
     }
     
+    //Lê o arquivo e passa a string Mapa[14]
     public void readFile(){
         while( scan.hasNext() ){
             for(int i = 0; i < 14; i++){
@@ -47,7 +52,7 @@ public class Mapa {
         scan.close();
     }
     
-        
+     //Gets   
     public Image getCaminho(){
         return caminho;
     }

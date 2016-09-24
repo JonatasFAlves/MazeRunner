@@ -2,17 +2,16 @@ package Game;
 
 import javax.swing.*;
 
-public class Maze {
-    public static void main(String[] args) {
-        new Maze();
-    }
-    
+public class Maze {   
+    //Quando classe Maze for chamada...
     public Maze(){
+        //Cria novo JFrame e adiciona um título novo JFrame
         JFrame frame = new JFrame();
-        frame.setTitle( "Mazer Runner - Version 1.0" );
-        
+        frame.setTitle( "Super Mario Maze - Versão 0.8" );
+        //Adiciona o panel Board ao JFrame.
         frame.add(new Board());
-        
+        /* Seta tamanhos. Janela deverá ficar no centro da tela.
+        JFrame com novo JPanel visível. Caso usuário aperte "x" o JFrame se encerra. */
         frame.setSize(464, 485);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
