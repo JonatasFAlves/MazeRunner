@@ -1,2 +1,0 @@
-# MazeRunner
-Game maze
