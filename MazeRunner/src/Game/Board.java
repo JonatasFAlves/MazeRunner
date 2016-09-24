@@ -25,6 +25,9 @@ public class Board extends JPanel implements ActionListener {
     
     
     public void actionPerformed(ActionEvent e) {
+        if ( mapa.getMapa( jog.getTileX(), jog.getTileY() ).equals("c") ){
+            JOptionPane.showMessageDialog(null, "Fuck yeah");
+        }
         repaint();
     }
     
@@ -39,6 +42,10 @@ public class Board extends JPanel implements ActionListener {
                 
                 if ( mapa.getMapa(x, y).equals( "w" ) ){
                     g.drawImage( mapa.getParede(), x * 32, y * 32, null );
+                }
+                
+                if ( mapa.getMapa(x, y).equals( "c" ) ){
+                    g.drawImage( mapa.getChegada(), x * 32, y * 32, null );
                 }
             }
         } 
