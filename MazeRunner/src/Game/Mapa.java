@@ -9,7 +9,7 @@ public class Mapa {
     //Variável para scanear imagens
     private Scanner scan;
     //VAriável para pintar o mapa
-    private String Mapa[] = new String [14];
+    private String Mapa[] = new String [30];
     //Variáveis para armazenamento dos ícones
     private Image caminho,
                   parede,
@@ -43,10 +43,10 @@ public class Mapa {
         }
     }
     
-    //Lê o arquivo e passa a string Mapa[14]
+    //Lê o arquivo e passa a string Mapa[30]
     public void readFile(){
         while( scan.hasNext() ){
-            for(int i = 0; i < 14; i++){
+            for(int i = 0; i < 30; i++){
                 Mapa[i] = scan.next();
             }
         }
