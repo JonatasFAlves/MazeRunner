@@ -15,7 +15,9 @@ public class Mapa {
                   parede,
                   chegada;
     
-    public Mapa(){
+    private String localMap;
+    
+    public Mapa(String localMap){
         //Recebe imagem da parede, caminho e da chegada e coloca em suas respectivas variáveis
         ImageIcon img = new ImageIcon( "icons\\caminho.png" );
         caminho = img.getImage();
@@ -23,6 +25,8 @@ public class Mapa {
         parede = img.getImage();
         img = new ImageIcon ( "icons\\peach.png" );
         chegada = img.getImage();
+        
+        this.localMap = localMap;
         
         //Funções para ler os mapas
         openFile();
@@ -33,7 +37,7 @@ public class Mapa {
     //Procura o arquivo .txt do mapa
     public void openFile(){  
         try{
-        scan = new Scanner(new File("mapas\\mapa1.txt"));
+        scan = new Scanner(new File(localMap));
         } catch (Exception e){
             JOptionPane.showMessageDialog(null, "Mapa não encontrado!");
         }
@@ -69,4 +73,5 @@ public class Mapa {
         String index = Mapa[y].substring(x, x + 1);
         return index;
     }
+
 }

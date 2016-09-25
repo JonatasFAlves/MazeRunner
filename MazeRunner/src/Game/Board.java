@@ -1,8 +1,10 @@
 package Game;
 
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+
 
 public class Board extends JPanel implements ActionListener {
     //Variável de relógio, mapa e jogador das classes usadas.
@@ -12,9 +14,15 @@ public class Board extends JPanel implements ActionListener {
     //Variável que adiciona número de jogadas
     private int jogadas = 0;
     
-    public  Board(){ 
+    private String localMap;
+    private JFrame frame;
+    
+    public  Board(String localMap, JFrame frame){
+        this.localMap = localMap;
+        this.frame = frame;
+        
         //Novo Mapa() e Jogador()
-        mapa = new Mapa();
+        mapa = new Mapa(this.localMap);
         jog = new Jogador();
         //Uso das teclas 
         addKeyListener(new Al());
@@ -23,22 +31,53 @@ public class Board extends JPanel implements ActionListener {
         
         //Relógio de 25ms em 25ms para checagem de ações
         timer = new Timer(25, this);
-        timer.start();
-        
-        
+        timer.start();     
     }
     
-        //Checa de 25ms em 25ms
+        //Roda 25ms em 25ms
     public void actionPerformed(ActionEvent e) {
         //Checa se jogador chegou ao final da fase
         if ( mapa.getMapa( jog.getTileX(), jog.getTileY() ).equals("c") ){
-            JOptionPane.showMessageDialog(null, "Fuck yeah");
+            
+            //Troca a variável para carregar o local da próxima fase
+            if (this.localMap.equals("mapas\\mapa1.txt")){
+                this.localMap = "mapas\\mapa2.txt";
+            } 
+            else if (this.localMap.equals("mapas\\mapa2.txt")){
+                this.localMap = "mapas\\mapa3.txt";
+            }
+            else if (this.localMap.equals("mapas\\mapa3.txt")){
+                //this.localMap = "mapas\\mapa4.txt";
+            } 
+            else if (this.localMap.equals("mapas\\mapa4.txt")){
+                this.localMap = "mapas\\mapa5.txt";
+            } 
+            else if (this.localMap.equals("mapas\\mapa5.txt")){
+                this.localMap = "mapas\\mapa6.txt";
+            } 
+            else if (this.localMap.equals("mapas\\mapa6.txt")){
+                //this.localMap = "mapas\\mapa7.txt";
+            } 
+            else if (this.localMap.equals("mapas\\mapa7.txt")){
+                this.localMap = "mapas\\mapa8.txt";
+            } 
+            else if (this.localMap.equals("mapas\\mapa8.txt")){
+                this.localMap = "mapas\\mapa9.txt";
+            } 
+            else if (this.localMap.equals("mapas\\mapa9.txt")){
+                //this.localMap = "mapas\\mapa3.txt";
+            }             
+            
+            //Troca mapa e reseta posição do jogador
+            mapa = new Mapa(localMap);
+            jog.resetPosition();
         }
         //Muda os icones de lugares caso haja movimento 
         repaint();
     }
     
     public void paint(Graphics g){
+        
         super.paint(g);
         //"Pinta" os blocos com paredes, caminho e o final da fase.
         for ( int y = 0; y < 14; y++ ){
@@ -54,9 +93,11 @@ public class Board extends JPanel implements ActionListener {
                 if ( mapa.getMapa(x, y).equals( "c" ) ){
                     g.drawImage( mapa.getChegada(), x * 32, y * 32, null );
                 }
+                   
             }
         } 
-        //"Pinta" o jogador na posição (1,1)*32
+        
+        //Posiciona o icone do jogador na posição (1,1)*32
         g.drawImage(jog.getJogador(), jog.getTileX() * 32, jog.getTileY() * 32, null);
     }
     
@@ -92,6 +133,22 @@ public class Board extends JPanel implements ActionListener {
                 jog.move(-1, 0);
                 jogadas++;
                 }
+            }
+            
+            //Caso usuário aperte ESC, Pergunta se jogador deseja sair, CAso sim, volta ao menu
+            if ( teclaChave == KeyEvent.VK_ESCAPE ){
+                
+                int resposta;
+                String messageQuit = "Você deseja voltar ao menu principal? \n"
+                        + "Todo o seu progresso será perdido.";
+                
+                resposta = JOptionPane.showConfirmDialog( null, messageQuit, "Quit", JOptionPane.YES_NO_OPTION );
+                
+                if ( resposta == (JOptionPane.YES_OPTION) ){
+                String[] args = {};
+                Menu.main(args);
+                frame.dispose();
+                }               
             }
         }       
     }

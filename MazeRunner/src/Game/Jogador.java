@@ -21,11 +21,17 @@ public class Jogador {
     
     //Função para movimento do jogador, adiciona o X e Y ao local do jogador
     public void move(int tileX, int tileY ){
-        this.tileX += tileX;
-        this.tileY += tileY;
+        this.setTileX(this.tileX + tileX);
+        this.setTileY(this.tileY + tileY);
     }
     
-    //Gets 
+    //Reseta posição do jogador
+    public void resetPosition(){
+        this.tileX = 1;
+        this.tileY = 1;
+    }
+    
+    //Gets e Sets
     public Image getJogador(){
         return imgJogador;
     }
@@ -37,4 +43,12 @@ public class Jogador {
         return tileY;
     }
     
+    public void setTileX(int tileX){
+        this.tileX = tileX;
+    }
+    
+    public void setTileY(int tileY){
+        this.tileY = tileY;
+    }
+        
 }
