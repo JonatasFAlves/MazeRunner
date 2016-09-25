@@ -35,7 +35,7 @@ public class Menu extends javax.swing.JFrame {
         });
 
         buttonGroup1.add(easyButton);
-        easyButton.setText("Noob");
+        easyButton.setText("Fácil");
         easyButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 easyButtonActionPerformed(evt);
@@ -43,7 +43,7 @@ public class Menu extends javax.swing.JFrame {
         });
 
         buttonGroup1.add(normalButton);
-        normalButton.setText("Mediano");
+        normalButton.setText("Médio");
         normalButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 normalButtonActionPerformed(evt);
@@ -51,7 +51,7 @@ public class Menu extends javax.swing.JFrame {
         });
 
         buttonGroup1.add(hardButton);
-        hardButton.setText("Bixão mermo");
+        hardButton.setText("Difícil");
         hardButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 hardButtonActionPerformed(evt);
@@ -73,7 +73,7 @@ public class Menu extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(normalButton)
                         .addGap(24, 24, 24)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
                 .addComponent(hardButton)
                 .addGap(45, 45, 45))
             .addGroup(jPanel1Layout.createSequentialGroup()

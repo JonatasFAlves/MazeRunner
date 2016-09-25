@@ -1,6 +1,7 @@
 package Game;
 
 
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -80,25 +81,25 @@ public class Board extends JPanel implements ActionListener {
         
         super.paint(g);
         //"Pinta" os blocos com paredes, caminho e o final da fase.
-        for ( int y = 0; y < 14; y++ ){
-            for ( int x = 0; x < 14; x++ ){
+        for ( int y = 0; y < 30; y++ ){
+            for ( int x = 0; x < 30; x++ ){
                 if ( mapa.getMapa(x, y).equals( "g" ) ){
-                    g.drawImage( mapa.getCaminho(), x * 32, y * 32, null );
+                    g.drawImage( mapa.getCaminho(), x * 16, y * 16, null );
                 }
                 
                 if ( mapa.getMapa(x, y).equals( "w" ) ){
-                    g.drawImage( mapa.getParede(), x * 32, y * 32, null );
+                    g.drawImage( mapa.getParede(), x * 16, y * 16, null );
                 }
                 
                 if ( mapa.getMapa(x, y).equals( "c" ) ){
-                    g.drawImage( mapa.getChegada(), x * 32, y * 32, null );
+                    g.drawImage( mapa.getChegada(), x * 16, y * 16, null );
                 }
                    
             }
         } 
         
-        //Posiciona o icone do jogador na posição (1,1)*32
-        g.drawImage(jog.getJogador(), jog.getTileX() * 32, jog.getTileY() * 32, null);
+        //Posiciona o icone do jogador na posição (1,1)*16
+        g.drawImage(jog.getJogador(), jog.getTileX() * 16, jog.getTileY() * 16, null);
     }
     
     //Classe para movimento do jogador
