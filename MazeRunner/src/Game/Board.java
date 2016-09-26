@@ -60,7 +60,7 @@ public class Board extends JPanel implements ActionListener {
             //Caso jogador passe da terceira fase ele completa modo easy
             else if (this.localMap.equals("mapas\\mapa3.txt")){
                 
-                message = "Você completou o easy mode, parabéns!! \n Porquê não tentas o normal mode?";
+                message = "Parabéns. Você completou o easy mode!! \n Porquê não tentas o normal mode?";
                 JOptionPane.showMessageDialog(null, message, "WIN", JOptionPane.INFORMATION_MESSAGE, imgGif);
                 
                 new Menu();
@@ -77,7 +77,7 @@ public class Board extends JPanel implements ActionListener {
             //Caso jogador passe da terceira fase ele completa modo normal
             else if (this.localMap.equals("mapas\\mapa6.txt")){
                 
-                message = "Você completou o normal mode, parabéns!! \n Se achas que consegue, porquê não encaras o hard mode?";
+                message = "Parabéns. Você completou o normal mode!! \n Se achas que consegue, porquê não encaras o hard mode?";
                 JOptionPane.showMessageDialog(null, message, "WIN", JOptionPane.INFORMATION_MESSAGE, imgGif);
                 
                 new Menu();
@@ -93,7 +93,7 @@ public class Board extends JPanel implements ActionListener {
             //Caso jogador passe da terceira fase ele completa modo hard
             else if (this.localMap.equals("mapas\\mapa9.txt")){
                 
-                message = "Você completou o hard mode, parabéns!!!!!!!!!!!!!!!!!! \n Você concerteza é digno do título 'Maze Runner'";
+                message = "Parabén. Você completou o hard mode!! \n Você com certeza é digno do título 'Maze Runner'";
                 JOptionPane.showMessageDialog(null, message, "WIN", JOptionPane.INFORMATION_MESSAGE, imgGif);
                 
                 new Menu();
