@@ -5,14 +5,17 @@ import javax.swing.*;
 
 public class Jogador {
     
-    //Variáveis para localização do jogador e armazenamento do ícone do jogador.
+    //Variáveis para localização do jogador e armazenamento dos ícones do jogador.
     private int tileX, tileY;
-    private Image imgJogador;
+    private Image imgJogador, imgJogadorL;
+                    
     
     public Jogador(){
-        //Recebe o ícone do jogador
+        //Recebe os ícones do jogador
         ImageIcon img = new ImageIcon("icons\\jogador.png");
         imgJogador = img.getImage();
+        img = new ImageIcon("icons\\jogador2.png");
+        imgJogadorL = img.getImage();
         
         //Inicia o jogador na posição (1,1)
         tileX = 1;
@@ -27,12 +30,12 @@ public class Jogador {
     
     //Reseta posição do jogador
     public void resetPosition(){
-        this.tileX = 1;
-        this.tileY = 1;
+        this.setTileX (1);
+        this.setTileY (1);
     }
     
     //Gets e Sets
-    public Image getJogador(){
+    public Image getImgJogador(){
         return imgJogador;
     }
     
@@ -49,6 +52,10 @@ public class Jogador {
     
     public void setTileY(int tileY){
         this.tileY = tileY;
+    }
+
+    public Image getImgJogadorL() {
+        return imgJogadorL;
     }
         
 }

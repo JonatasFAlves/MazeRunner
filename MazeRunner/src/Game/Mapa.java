@@ -15,6 +15,7 @@ public class Mapa {
                   parede,
                   chegada;
     
+    //VAriável em que será buscado o mapa
     private String localMap;
     
     public Mapa(String localMap){
@@ -26,6 +27,7 @@ public class Mapa {
         img = new ImageIcon ( "icons\\peach.png" );
         chegada = img.getImage();
         
+        //Recebe variável com local do mapa de outra função
         this.localMap = localMap;
         
         //Funções para ler os mapas
@@ -52,6 +54,7 @@ public class Mapa {
         }
     }
     
+    //Fecha o scan
     public void closeFile(){
         scan.close();
     }

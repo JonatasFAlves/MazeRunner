@@ -4,6 +4,7 @@ import javax.swing.*;
 
 public class Maze {
     
+    //Variável para o armazenamento do local
     private String localMap;
   
     //Quando classe Maze for chamada...
@@ -17,7 +18,7 @@ public class Maze {
         frame.add(new Board(this.localMap, frame));
         /* Seta tamanhos. Janela deverá ficar no centro da tela.
         JFrame com novo JPanel visível. Caso usuário aperte "x" o JFrame se encerra. */
-        frame.setSize(498, 520);
+        frame.setSize(616, 640);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
